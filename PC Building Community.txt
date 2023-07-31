@@ -1,0 +1,15 @@
+Name: Austin Obnillas
+Stack: MERN
+GitHub Repo link: 
+Project name: Community PC's
+Project description: The app would be a place where people could should off their cool pc builds and give others ideas/inspiration.
+MVP (Minimum Viable Product) features: 
+    - Basic CRUD functions with validations
+    - CSS
+    - Functional React Front End
+Bonus feature(s): 
+    - Login and Registration with validations using MERN stack.
+    - Responsive App
+    - protected routes with use of JWT
+    - Bootstrap (where needed)
+    - file upload (image);
