@@ -8,10 +8,14 @@ const Sidebar = (props) => {
         <div className="sidebarContainer">
             <div className="sidebarContent">
                 <div className="sidebarHeader">
-                    <Link to='/'><h3>Home</h3></Link>
-                    <Link to='/add'>+</Link>
+                    <Link to='/'><h2>Home</h2></Link>
+                    
                 </div>
-                <h4>Builds</h4>
+                <div className="sidebarHeader">
+                    <h4 className="">Builds:</h4>
+                    <Link className="btn btn-light" to='/add'>+</Link>
+                </div>
+                
                 <ul className="listPcs list-group">
                     {allPcs.map((pc, index) => (
                         <Link to={`/computer/${pc._id}`} className="buildNameSidebar">

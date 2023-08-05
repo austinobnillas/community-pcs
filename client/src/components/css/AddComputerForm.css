@@ -6,10 +6,25 @@
     border-radius: 15px;
     padding: 10px;
 }
+.heading {
+    margin: 15px;
+}
 .form {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    margin: 15px;
 }
-button {
-    max-height: 40px;
+.formLeft {
+    width: 300px;
+}
+.formMiddle {
+    width: 300px;
+}
+.formRight {
+    width: 300px;
+}
+.button {
+    display: flex;
+    align-items: flex-end;
 }

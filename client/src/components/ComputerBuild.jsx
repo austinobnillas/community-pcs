@@ -85,7 +85,7 @@ const ComputerBuild = (props) => {
             </div>
             <div className="buildDescription">
                 <div className="descriptionLeft">
-                    <p>{description}</p>
+                    <p>Description: {description}</p>
                     <p>posted by: {username}</p>
                 </div>
                 <div className="descriptionRight">
@@ -93,7 +93,7 @@ const ComputerBuild = (props) => {
                 </div>
             </div>
             <div className="buildBottom">
-                <table>
+                <table className="table table-dark">
                     <thead>
                         <tr>
                             <th>Part:</th>

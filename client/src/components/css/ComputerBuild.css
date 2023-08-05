@@ -4,19 +4,26 @@
     display: flex;
     flex-direction: column;
     border-radius: 15px;
+    height: 627px;
 }
 .buildTop {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin: 15px;
 }
 .buildDescription {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 15px;
+    margin-bottom: 0px;
 }
 .buildBottom {
     display: flex;
     flex-direction: column;
+    margin: 15px;
+    margin-bottom: 5px;
 }
+
