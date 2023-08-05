@@ -1,4 +1,54 @@
 .homepageContainer {
     background-color: rgb(40, 40, 40);
     border-radius: 15px;
+    color: rgb(203, 203, 203);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+.homepageTop {
+    margin-bottom: 10px;
+}
+.homepageMiddle {
+
+}
+.homepageBottom {
+
+}
+.imgCollage {
+    display: flex;
+    flex-direction: row;
+}
+.imgCollageLeft {
+    display: flex;
+    flex-direction: column;
+}
+.topLeftImg {
+    width: 323.24px;
+}
+.bottomLeft {
+    height: 150px;
+}
+.bottomLeft2 {
+    height: 150px;
+}
+.middleTop {
+    width: 323.24px;
+}
+.middleBottom {
+    width: 323.24px;
+    height: 183.67px;
+}
+.rightTop {
+    height: 100px;
+    width: 172.95px;
+}
+.rightTop2 {
+    height: 100px;
+}
+.rightBottom {
+    width: 323.24px;
+    height: 265.48px;
+    
 }

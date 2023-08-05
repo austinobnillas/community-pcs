@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import './css/ComputerBuild.css'
+import pcImg from "../assets/computer.png"
 
 const ComputerBuild = (props) => {
     const {allPcs, setAllPcs} = props;
@@ -54,7 +55,6 @@ const ComputerBuild = (props) => {
                 setAccessories(res.data.accessories);
                 setAccessoriesLink(res.data.accessoriesLink);
 
-                console.log(res.data)
             })
             .catch((err) => {console.log(err)})
     }, [id])
@@ -62,7 +62,6 @@ const ComputerBuild = (props) => {
     const deleteHandler = (id) => {
         axios.delete(`http://localhost:8000/api/computers/delete/${id}`, {withCredentials: true})
             .then((res) => {
-                console.log(res.data);
                 const newPcsList = allPcs.filter((pc, index) => pc._id !== id)
                 setAllPcs(newPcsList);
                 navigate('/');
@@ -76,20 +75,21 @@ const ComputerBuild = (props) => {
     return (
         <div className="buildContainer">
             <div className="buildTop">
-                <h1>{buildName}</h1>
+                <div>
+                    <h1>{buildName}</h1>
+                    <p>posted by: {username}</p>
+                </div>
                 <div>
                     <button> <Link to={`/edit/${id}`}>Edit</Link></button>
                     <button onClick={() => deleteHandler(_id)}>Delete</button>
                 </div>
-                
             </div>
             <div className="buildDescription">
                 <div className="descriptionLeft">
                     <p>Description: {description}</p>
-                    <p>posted by: {username}</p>
                 </div>
                 <div className="descriptionRight">
-                    <img src="" alt="Imageofpc" />
+                    <img className="pcImg"src={pcImg} alt="Imageofpc" />
                 </div>
             </div>
             <div className="buildBottom">

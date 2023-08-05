@@ -18,8 +18,8 @@ const Sidebar = (props) => {
                 
                 <ul className="listPcs list-group">
                     {allPcs.map((pc, index) => (
-                        <Link to={`/computer/${pc._id}`} className="buildNameSidebar">
-                            <li className="listContents">
+                        <Link to={`/computer/${pc._id}`} className="buildNameSidebar"key={index}>
+                            <li className="listContents" >
                                 <h5>{pc.buildName}</h5>
                                 <p className="name">created by: {pc.username}</p>
                             </li>

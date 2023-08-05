@@ -27,9 +27,9 @@ module.exports = {
         //cannot access this function unless logged in and the author of the post
         username = jwt.verify(req.cookies.userToken, secret)
         if (username.username === req.body.username){
-            Computer.findByIdAndUpdate({_id: req.params.id}, req.body)
+            Computer.findByIdAndUpdate({_id: req.params.id}, req.body, {new: true, runValidators: true})
             .then(updatedComputer => res.json(updatedComputer))
-            .catch(err => console.log(err));
+            .catch(err => res.status(400).json(err));
         } else {
             res.status(400).json({msg: "Only the author of the post can edit this."})
         }

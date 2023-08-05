@@ -72,9 +72,12 @@ const AddComputerForm = (props) => {
     return (
         <div className="formContainer">
             <h3 className="heading">Add Your PC to the community</h3>
-            {errors.map((err, index) => (
-                    <p key="{index}">{err}</p>
+            <div className="errors">
+                {errors.map((err, index) => (
+                    <p className="errors" key={index}>{err}</p>
                 ))}
+            </div>
+            
             <form className="form" onSubmit={submitHandler}>
                 
                 <div className="formLeft">

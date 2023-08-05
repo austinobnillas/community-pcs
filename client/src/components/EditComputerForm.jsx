@@ -58,29 +58,32 @@ const editComputerForm = (props) => {
     const submitHandler = (e) => {
         e.preventDefault();
         axios.patch(`http://localhost:8000/api/computers/edit/${id}`, {
-            buildName, 
-            username,
-            description,
-            cpu,
-            cpuLink,
-            cpuCooler,
-            cpuCoolerLink,
-            motherboard,
-            motherboardLink,
-            memory,
-            memoryLink,
-            graphicsCard,
-            graphicsCardLink,
-            storage,
-            storageLink,
-            powerSupply,
-            powerSupplyLink,
-            accessories,
-            accessoriesLink
+            buildName: buildName, 
+            username: username,
+            description: description,
+            cpu: cpu,
+            cpuLink: cpuLink,
+            cpuCooler: cpuCooler,
+            cpuCoolerLink: cpuCoolerLink,
+            motherboard: motherboard,
+            motherboardLink: motherboardLink,
+            memory: memory,
+            memoryLink: memoryLink,
+            graphicsCard: graphicsCard,
+            graphicsCardLink: graphicsCardLink,
+            storage: storage,
+            storageLink: storageLink,
+            powerSupply: powerSupply,
+            powerSupplyLink: powerSupplyLink,
+            accessories: accessories,
+            accessoriesLink: accessoriesLink
         }, {withCredentials: true})
             .then((res) => {
-                console.log(res.data);
-                setAllPcs([...allPcs, res.data]);
+                const updatedPc = res.data;
+                const updatedAllPcs = allPcs.map( pc => {
+                    return pc._id === updatedPc._id ? updatedPc : pc;
+                })
+                setAllPcs(updatedAllPcs);
                 navigate('/')
             })
             .catch((err) => {
@@ -101,67 +104,69 @@ const editComputerForm = (props) => {
 
     return (
         <div className="formContainer">
-            <h3>Add Your PC to the community</h3>
+            <h3 className="heading" >Update {buildName}</h3>
             {errors.map((err, index) => (
-                    <p key="{index}">{err}</p>
+                    <p className="errors"key={index}>{err}</p>
                 ))}
             <form className="form" onSubmit={submitHandler}>
                 
                 <div className="formLeft">
                     <div>
-                        <label htmlFor="buildName">Build Name: </label>
-                        <input value={buildName} type="text" name="buildName" onChange={(e) => setBuildName(e.target.value)}/>
+                        <label className="form-label" htmlFor="buildName">Build Name: </label>
+                        <input className="form-control" value={buildName} type="text" name="buildName" onChange={(e) => setBuildName(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor="description">Description: </label>
-                        <textarea value={description} name="" id="" cols="30" rows="10" onChange={(e) => setDescription(e.target.value)}></textarea>
+                        <label className="form-label" htmlFor="description">Description: </label>
+                        <textarea className="form-control" value={description} name="" id="" cols="30" rows="10" onChange={(e) => setDescription(e.target.value)}></textarea>
                     </div>
                 </div>
                 <div className="formMiddle">
                     <div>
-                        <label htmlFor="cpu">CPU: </label>
-                        <input value={cpu} type="text" name="cpu" onChange={(e) => setCpu(e.target.value)}/>
-                        <input value={cpuLink} type="text" name="cpuLink" placeholder="Optional" onChange={(e) => setCpuLink(e.target.value)}/>
+                        <label className="form-label" htmlFor="cpu">CPU: </label>
+                        <input className="form-control" value={cpu} type="text" name="cpu" onChange={(e) => setCpu(e.target.value)}/>
+                        <input className="form-control" value={cpuLink} type="text" name="cpuLink" placeholder="Optional" onChange={(e) => setCpuLink(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor="cpuCooler">CPU Cooler: </label>
-                        <input value={cpuCooler} type="text" name="cpuCooler" onChange={(e) => setCpuCooler(e.target.value)}/>
-                        <input value={cpuCoolerLink} type="text" name="cpuCoolerLink" placeholder="Optional" onChange={(e) => setCpuCoolerLink(e.target.value)}/>
+                        <label className="form-label" htmlFor="cpuCooler">CPU Cooler: </label>
+                        <input className="form-control" value={cpuCooler} type="text" name="cpuCooler" onChange={(e) => setCpuCooler(e.target.value)}/>
+                        <input className="form-control" value={cpuCoolerLink} type="text" name="cpuCoolerLink" placeholder="Optional" onChange={(e) => setCpuCoolerLink(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor="motherboard">Motherboard: </label>
-                        <input value={motherboard} type="text" name="motherboard" onChange={(e) => setMotherboard(e.target.value)}/>
-                        <input value={motherboardLink} type="text" name="motherboardLink" placeholder="Optional" onChange={(e) => setMotherboardLink(e.target.value)}/>
+                        <label className="form-label" htmlFor="motherboard">Motherboard: </label>
+                        <input className="form-control" value={motherboard} type="text" name="motherboard" onChange={(e) => setMotherboard(e.target.value)}/>
+                        <input className="form-control" value={motherboardLink} type="text" name="motherboardLink" placeholder="Optional" onChange={(e) => setMotherboardLink(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor="memory">Memory/RAM: </label>
-                        <input value={memory} type="text" name="memory" onChange={(e) => setMemory(e.target.value)}/>
-                        <input value={memoryLink} type="text" name="memoryLink" placeholder="Optional" onChange={(e) => setMemoryLink(e.target.value)}/>
+                        <label className="form-label" htmlFor="memory">Memory/RAM: </label>
+                        <input className="form-control" value={memory} type="text" name="memory" onChange={(e) => setMemory(e.target.value)}/>
+                        <input className="form-control" value={memoryLink} type="text" name="memoryLink" placeholder="Optional" onChange={(e) => setMemoryLink(e.target.value)}/>
                     </div>
                 </div>
                 <div className="formLeft">
                     <div>
-                        <label htmlFor="graphicsCard">Graphics Card: </label>
-                        <input value={graphicsCard} type="text" name="graphicsCard" onChange={(e) => setGraphicsCard(e.target.value)}/>
-                        <input value={graphicsCardLink} type="text" name="graphicsCardLink" placeholder="Optional" onChange={(e) => setGraphicsCardLink(e.target.value)}/>
+                        <label className="form-label" htmlFor="graphicsCard">Graphics Card: </label>
+                        <input className="form-control" value={graphicsCard} type="text" name="graphicsCard" onChange={(e) => setGraphicsCard(e.target.value)}/>
+                        <input className="form-control" value={graphicsCardLink} type="text" name="graphicsCardLink" placeholder="Optional" onChange={(e) => setGraphicsCardLink(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor="storage">Storage: </label>
-                        <input value={storage} type="text" name="storage" onChange={(e) => setStorage(e.target.value)}/>
-                        <input value={storageLink} type="text" name="storageLink" placeholder="Optional" onChange={(e) => setStorageLink(e.target.value)}/>
+                        <label className="form-label" htmlFor="storage">Storage: </label>
+                        <input className="form-control" value={storage} type="text" name="storage" onChange={(e) => setStorage(e.target.value)}/>
+                        <input className="form-control" value={storageLink} type="text" name="storageLink" placeholder="Optional" onChange={(e) => setStorageLink(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor="powerSupply">Power Supply: </label>
-                        <input value={powerSupply} type="text" name="powerSupply" onChange={(e) => setPowerSupply(e.target.value)} />
-                        <input value={powerSupplyLink} type="text" name="powerSupplyLink" placeholder="Optional" onChange={(e) => setPowerSupplyLink(e.target.value)}/>
+                        <label className="form-label" htmlFor="powerSupply">Power Supply: </label>
+                        <input className="form-control" value={powerSupply} type="text" name="powerSupply" onChange={(e) => setPowerSupply(e.target.value)} />
+                        <input className="form-control" value={powerSupplyLink} type="text" name="powerSupplyLink" placeholder="Optional" onChange={(e) => setPowerSupplyLink(e.target.value)}/>
                     </div>
                     <div>
-                        <label htmlFor="accessories">Accessories: </label>
-                        <input value={accessories} type="text" name="accessories" placeholder="Optional" onChange={(e) => setAccessories(e.target.value)}/>
-                        <input value={accessoriesLink} type="text" name="accessoriesLink" placeholder="Optional" onChange={(e) => setAccessoriesLink(e.target.value)}/>
+                        <label className="form-label" htmlFor="accessories">Accessories: </label>
+                        <input className="form-control" value={accessories} type="text" name="accessories" placeholder="Optional" onChange={(e) => setAccessories(e.target.value)}/>
+                        <input className="form-control" value={accessoriesLink} type="text" name="accessoriesLink" placeholder="Optional" onChange={(e) => setAccessoriesLink(e.target.value)}/>
                     </div>
                 </div>
-                <button>Post</button>
+                <div className="button">
+                    <button className="btn btn-primary">Update</button>
+                </div>
             </form>
         </div>
     )

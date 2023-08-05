@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 15px;
-    height: 627px;
+    height: auto;
 }
 .buildTop {
     display: flex;
@@ -19,6 +19,15 @@
     justify-content: space-between;
     margin: 15px;
     margin-bottom: 0px;
+}
+.descriptionLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.pcImg {
+    height: 250px;
 }
 .buildBottom {
     display: flex;

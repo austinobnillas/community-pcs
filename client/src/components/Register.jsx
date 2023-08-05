@@ -19,10 +19,7 @@ const Register = () => {
             })
             .catch((err) => {
                 const errorMsg = err.response.data.msg
-                console.log(err)
-                console.log(errorMsg);
                 const errorResponse = err.response.data.errors;
-                console.log(errorResponse)
                 const errorArr = []
                 if (errorMsg) {
                     alert(errorMsg)
