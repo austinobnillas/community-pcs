@@ -7,14 +7,11 @@ module.exports = {
     addComputer: (req, res) => {
             //adding logged in username the req.object
             username = jwt.verify(req.cookies.userToken, secret)
-            // console.log(req.body, username.username);
             const request = req.body;
             request['username'] = username.username
-            // console.log(username)
-
-        Computer.create(request)
-            .then(newComputer => res.json(newComputer))
-            .catch(err => res.status(400).json(err));
+            Computer.create(request)
+                .then(newComputer => res.json(newComputer))
+                .catch(err => res.status(400).json(err));
     },
     getAllComputers: (req, res) => {
         Computer.find()
@@ -22,18 +19,33 @@ module.exports = {
             .catch(err => console.log(err));
     },
     getOneComputer: (req, res) => {
-        Computer.findById({_id: req.params._id})
+        Computer.findById({_id: req.params.id})
             .then(oneComputer => res.json(oneComputer))
             .catch(err => console.log(err));
     },
     editComputer: (req, res) => {
-        Computer.findByIdAndDelete({_id: req.params.id}, req.body)
+        //cannot access this function unless logged in and the author of the post
+        username = jwt.verify(req.cookies.userToken, secret)
+        if (username.username === req.body.username){
+            Computer.findByIdAndUpdate({_id: req.params.id}, req.body)
             .then(updatedComputer => res.json(updatedComputer))
             .catch(err => console.log(err));
+        } else {
+            res.status(400).json({msg: "Only the author of the post can edit this."})
+        }
+        
     },
-    deleteComputer: (req, res) => {
-        Computer.findByIdAndDelete({_id: req.params.id})
-            .then(deletedAuthor => res.json(deletedAuthor))
+    deleteComputer: async (req, res) => {
+        //cannot access this function unless logged in and the author of the post
+        username = jwt.verify(req.cookies.userToken, secret)
+        const createdBy = await Computer.findById({_id: req.params.id})
+
+        if (username.username === createdBy.username){
+            Computer.findByIdAndDelete({_id: req.params.id})
+            .then(updatedComputer => res.json(updatedComputer))
             .catch(err => console.log(err));
+        } else {
+            res.status(400).json({msg: "Only the author of the post can delete this."})
+        }
     }
 }

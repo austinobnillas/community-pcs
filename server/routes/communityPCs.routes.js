@@ -9,6 +9,10 @@ module.exports = app => {
     // app.get('/api/users', authenticate,  userController.getAllUsers);
     // app.get('/api/getOne', authenticate, userController.getOneUser);
     app.get('/api/dashboard', computerController.getAllComputers);
-    app.get('/api/:id', computerController.getOneComputer);
+    app.get('/api/computers/:id', computerController.getOneComputer);
+    // edit a computer
+    app.patch('/api/computers/edit/:id', authenticate, computerController.editComputer);
     app.post('/api/addcomputer', authenticate, computerController.addComputer);
+    //delete
+    app.delete('/api/computers/delete/:id', authenticate, computerController.deleteComputer);
 }

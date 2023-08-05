@@ -1,34 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {useState, useEffect} from 'react';
+import axios from 'axios';
+import './App.css';
+import Header from './components/Header'
+import Sidebar from './components/Sidebar';
+import Homepage from './components/Homepage';
+import ComputerBuild from './components/ComputerBuild';
+import Register from './components/Register';
+import Login from './components/Login';
+import AddComputerForm from './components/AddComputerForm';
+import EditComputerForm from './components/EditComputerForm';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [allPcs, setAllPcs] = useState([]);
+  
+  useEffect( () => {
+    axios.get('http://localhost:8000/api/dashboard')
+      .then((res) => {setAllPcs(res.data)})
+      .catch((err)=> console.log(err));
+      }, [])
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="appContainer">
+      <BrowserRouter>
+      <div className="appTop">
+        <Header />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      
+      <div className="appBodyContainer">
+        <div className="sidebar">
+          <Sidebar allPcs={allPcs} setAllPcs={setAllPcs}/>
+        </div>
+        <div className="appContent">
+          <Routes>
+            <Route path={`/register`} element={<Register />}/>
+            <Route path={`/login`} element={<Login />}/>
+            <Route path="/" element={<Homepage />}/>
+            <Route path={`/computer/:id`} element={<ComputerBuild allPcs={allPcs} setAllPcs={setAllPcs}/>}/>
+            <Route path="/add" element={<AddComputerForm allPcs={allPcs} setAllPcs={setAllPcs}/>}/>
+            <Route path={`/edit/:id`} element={<EditComputerForm allPcs={allPcs} setAllPcs={setAllPcs}/>}/>
+          </Routes>
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      </BrowserRouter>
+    </div>
   )
 }
 

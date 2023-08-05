@@ -22,7 +22,7 @@ module.exports = {
             }
         }
         catch(err){
-            res.status(400).json(err)
+            res.status(400).json(err);
         }
     },
 
@@ -30,11 +30,11 @@ module.exports = {
         try{
             const user = await User.findOne({username: req.body.username});
             if (user === null) {
-                return res.status(400).json({msg: "Invalid login attempt 1"})
+                return res.status(400).json({msg: "Invalid username or password"})
             }
             const correctPassword = await bcrypt.compare(req.body.password, user.password);
             if (!correctPassword) {
-                return res.status(400).json({msg: "Invalid Login attemp 2"});
+                return res.status(400).json({msg: "Invalid username or password"});
             }
             else {
                 const userToken = jwt.sign({
