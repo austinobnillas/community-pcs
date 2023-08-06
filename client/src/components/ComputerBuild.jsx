@@ -86,10 +86,10 @@ const ComputerBuild = (props) => {
             </div>
             <div className="buildDescription">
                 <div className="descriptionLeft">
-                    <p>Description: {description}</p>
+                    <img className="pcImg"src={pcImg} alt="Imageofpc" />
                 </div>
                 <div className="descriptionRight">
-                    <img className="pcImg"src={pcImg} alt="Imageofpc" />
+                    <p>Description: {description}</p>
                 </div>
             </div>
             <div className="buildBottom">
