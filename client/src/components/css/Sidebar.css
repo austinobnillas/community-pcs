@@ -6,6 +6,13 @@
     padding-left: 10px;
     padding-right: 10px;
 }
+.sidebarHeaderHome {
+    text-decoration: none;
+    color: rgb(203, 203, 203);
+}
+.sidebarHeaderHome:hover {
+    color: rgb(99, 99, 99);
+}
 .sidebarHeader {
     display: flex;
     flex-direction: row;
@@ -25,13 +32,13 @@
 .buildNameSidebar {
     color: rgb(203, 203, 203);
     text-decoration: none;
-    background-color: rgb(16, 16, 16);
+    background-color: rgb(40, 40, 40);
     margin: 2px;
     border-radius: 10px;
     list-style-type: none;
 }
 .buildNameSidebar:hover {
-    background-color: rgb(25, 25, 25);
+    background-color: rgb(36, 36, 36);
 }
 .listContents {
     padding: 7px;

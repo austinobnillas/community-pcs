@@ -7,7 +7,6 @@
   margin: 10px;
   margin-bottom: 0px;
 }
-
 .appBodyContainer {
   display: flex;
   flex-direction: row;
@@ -19,4 +18,5 @@
 .appContent {
   flex: 6;
   margin: 10px;
+  margin-left: 0px;
 }

@@ -75,22 +75,22 @@ const ComputerBuild = (props) => {
     return (
         <div className="buildContainer">
             <div className="buildTop">
-                <div>
-                    <h1>{buildName}</h1>
-                    <p>posted by: {username}</p>
-                </div>
-                <div>
-                    <button> <Link to={`/edit/${id}`}>Edit</Link></button>
-                    <button onClick={() => deleteHandler(_id)}>Delete</button>
-                </div>
-            </div>
-            <div className="buildDescription">
-                <div className="descriptionLeft">
+                <div className="buildTopLeft">
                     <img className="pcImg"src={pcImg} alt="Imageofpc" />
                 </div>
-                <div className="descriptionRight">
-                    <p>Description: {description}</p>
+                <div className="buildTopRight">
+                    <div className="buttons">
+                        <button className="btn btn-light m-1"> <Link className="link-secondary link-underline-opacity-0" to={`/edit/${id}`}>Edit</Link></button>
+                        <button className="btn btn-danger m-1" onClick={() => deleteHandler(_id)}>Delete</button>
+                    </div>
+                    <div className="buildDetails">
+                        <h1 className="font-weight-bold">{buildName}</h1>
+                        <p>Description: {description}</p>
+                        <p>posted by: {username}</p>
+                    </div>
+                    
                 </div>
+                
             </div>
             <div className="buildBottom">
                 <table className="table table-dark">

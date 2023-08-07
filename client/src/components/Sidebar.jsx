@@ -8,7 +8,7 @@ const Sidebar = (props) => {
         <div className="sidebarContainer">
             <div className="sidebarContent">
                 <div className="sidebarHeader">
-                    <Link to='/'><h2>Home</h2></Link>
+                    <Link className="sidebarHeaderHome" to='/'><h2>Home</h2></Link>
                     
                 </div>
                 <div className="sidebarHeader">

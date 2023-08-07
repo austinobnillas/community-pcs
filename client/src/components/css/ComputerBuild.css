@@ -9,30 +9,37 @@
 .buildTop {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     margin: 15px;
-}
-.buildDescription {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 15px;
-    margin-bottom: 0px;
-}
-.descriptionLeft {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
+    background-color: rgb(36, 36, 36);
+    border-radius: 15px;
 }
 .pcImg {
     height: 250px;
+    margin-right: 25px;
+    margin-left: 25px;
+    
+}
+.buildTopRight {
+    display: flex;
+    flex: 1;
+}
+.buildTopRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+    margin-right: 25px;
 }
 .buildBottom {
     display: flex;
     flex-direction: column;
     margin: 15px;
     margin-bottom: 5px;
+
 }
 

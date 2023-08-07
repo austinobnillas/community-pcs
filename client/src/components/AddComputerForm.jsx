@@ -116,7 +116,7 @@ const AddComputerForm = (props) => {
                     <div>
                         <label htmlFor="graphicsCard" className="form-label">Graphics Card: </label>
                         <input className="form-control" type="text" name="graphicsCard" onChange={(e) => setGraphicsCard(e.target.value)}/>
-                        <input className="form-control" type="text" name="graphicsCardLink" placeholder="Product Link (Optional)" onChange={(e) => setGraphicsCard(e.target.value)}/>
+                        <input className="form-control" type="text" name="graphicsCardLink" placeholder="Product Link (Optional)" onChange={(e) => setGraphicsCardLink(e.target.value)}/>
                     </div>
                     <div>
                         <label htmlFor="storage" className="form-label">Storage: </label>

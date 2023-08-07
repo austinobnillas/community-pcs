@@ -7,7 +7,7 @@ const Header = (props) => {
 
     const logout = () => {
         axios.post(`http://localhost:8000/api/logout`, {}, {withCredentials: true})
-            .then(console.log('logged out'))
+            .then(alert('Logged out'))
     }
     return (
         <div className="header">

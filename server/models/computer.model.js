@@ -17,7 +17,8 @@ const ComputerSchema = new mongoose.Schema({
     cpu: {
         type: String,
         required: [true, "CPU is required."],
-        minLength: [3, "Must be at least 3 characters."]
+        minLength: [3, "Must be at least 3 characters."],
+        maxLength: [100, "Cannot be over 100 characters long."]
     },
     cpuLink: {
         type: String
@@ -25,7 +26,8 @@ const ComputerSchema = new mongoose.Schema({
     cpuCooler: {
         type: String,
         required: [true, "CPU Cooler is required."],
-        minLength: [3, "Must be at least 3 characters."]
+        minLength: [3, "Must be at least 3 characters."],
+        maxLength: [100, "Cannot be over 100 characters long."]
     },
     cpuCoolerLink: {
         type: String
@@ -33,7 +35,8 @@ const ComputerSchema = new mongoose.Schema({
     motherboard: {
         type: String,
         required: [true, "Motherboard is required."],
-        minLength: [3, "Must be at least 3 characters."]
+        minLength: [3, "Must be at least 3 characters."],
+        maxLength: [100, "Cannot be over 100 characters long."]
     },
     motherboardLink: {
         type: String
@@ -41,7 +44,8 @@ const ComputerSchema = new mongoose.Schema({
     memory: {
         type: String,
         required: [true, "Memory is required."],
-        minLength: [3, "Must be at least 3 characters."]
+        minLength: [3, "Must be at least 3 characters."],
+        maxLength: [100, "Cannot be over 100 characters long."]
     },
     memoryLink: {
         type: String
@@ -49,7 +53,8 @@ const ComputerSchema = new mongoose.Schema({
     graphicsCard: {
         type: String,
         required: [true, "GPU is required."],
-        minLength: [3, "Must be at least 3 characters."]
+        minLength: [3, "Must be at least 3 characters."],
+        maxLength: [100, "Cannot be over 100 characters long."]
     },
     graphicsCardLink: {
         type: String,
@@ -57,7 +62,8 @@ const ComputerSchema = new mongoose.Schema({
     storage: {
         type: String,
         required: [true, "Storage is required."],
-        minLength: [3, "Must be at least 3 characters."]
+        minLength: [3, "Must be at least 3 characters."],
+        maxLength: [100, "Cannot be over 100 characters long."]
     },
     storageLink: {
         type: String,
@@ -65,13 +71,15 @@ const ComputerSchema = new mongoose.Schema({
     powerSupply: {
         type: String,
         required: [true, "Power Supply is required."],
-        minLength: [3, "Must be at least 3 characters."]
+        minLength: [3, "Must be at least 3 characters."],
+        maxLength: [100, "Cannot be over 100 characters long."]
     },
     powerSupplyLink: {
         type: String,
     },
     accessories: {
-        type: String
+        type: String,
+        maxLength: [100, "Cannot be over 100 characters long."]
     },
     accessoriesLink: {
         type: String

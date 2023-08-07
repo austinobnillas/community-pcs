@@ -32,7 +32,6 @@ const Register = () => {
             
     }
     return (
-
             <div className="regContainer">
                 <h2>Register</h2>
                 <div className="errorContainer">

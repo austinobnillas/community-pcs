@@ -1,1 +1,2 @@
 FINAL SOLO PROJECT FOR CODING DOJO
+Tech Stack: MongoDB ExpressJS React NodeJs
