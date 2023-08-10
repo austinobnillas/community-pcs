@@ -49,7 +49,7 @@ const AddComputerForm = (props) => {
             accessoriesLink
         }, {withCredentials: true})
             .then((res) => {
-                console.log(res.data);
+                // console.log(res.data);
                 setAllPcs([...allPcs, res.data]);
                 navigate('/')
             })

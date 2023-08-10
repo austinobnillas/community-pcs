@@ -106,56 +106,56 @@ const ComputerBuild = (props) => {
                             <th>CPU:</th>
                             <td>{cpu}</td>
                             <td>
-                                <a href={cpuLink} target="_blank">Link to {cpu}</a>
+                                <a href={cpuLink} target="_blank">{cpu}</a>
                             </td>
                         </tr>
                         <tr>
                             <th>CPU Cooler:</th>
                             <td>{cpuCooler}</td>
                             <td>
-                                <a href={cpuCoolerLink} target="_blank">Link to {cpuCooler}</a>
+                                <a href={cpuCoolerLink} target="_blank">{cpuCooler}</a>
                             </td>
                         </tr>
                         <tr>
                             <th>Motherboard:</th>
                             <td>{motherboard}</td>
                             <td>
-                                <a href={motherboardLink} target="_blank">Link to {motherboard}</a>
+                                <a href={motherboardLink} target="_blank">{motherboard}</a>
                             </td>
                         </tr>
                         <tr>
                             <th>Memory/RAM:</th>
                             <td>{memory}</td>
                             <td>
-                                <a href={memoryLink} target="_blank">Link to {memory}</a>
+                                <a href={memoryLink} target="_blank">{memory}</a>
                             </td>
                         </tr>
                         <tr>
                             <th>Graphics Card:</th>
                             <td>{graphicsCard}</td>
                             <td>
-                                <a href={graphicsCardLink} target="_blank">Link to {graphicsCard}</a>
+                                <a href={graphicsCardLink} target="_blank">{graphicsCard}</a>
                             </td>
                         </tr>
                         <tr>
                             <th>Storage:</th>
                             <td>{storage}</td>
                             <td>
-                                <a href={storageLink} target="_blank">Link to {storage}</a>
+                                <a href={storageLink} target="_blank">{storage}</a>
                             </td>
                         </tr>
                         <tr>
                             <th>Power Supply:</th>
                             <td>{powerSupply}</td>
                             <td>
-                                <a href={powerSupplyLink} target="_blank">Link to {powerSupply}</a>
+                                <a href={powerSupplyLink} target="_blank">{powerSupply}</a>
                             </td>
                         </tr>
                         <tr>
                             <th>Accessories/Other:</th>
                             <td>{accessories}</td>
                             <td>
-                                <a href={accessoriesLink} target="_blank">Link to {accessories}</a>
+                                <a href={accessoriesLink} target="_blank">{accessories}</a>
                             </td>
                         </tr>
                     </tbody>
