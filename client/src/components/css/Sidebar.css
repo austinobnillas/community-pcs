@@ -44,7 +44,7 @@
     padding: 7px;
 }
 .listPcs {
-    height: 100vh;
+    height: 70vh;
     overflow-y: scroll;
 }
 .listPcs::-webkit-scrollbar {

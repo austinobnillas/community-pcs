@@ -98,65 +98,40 @@ const ComputerBuild = (props) => {
                         <tr>
                             <th>Part:</th>
                             <th>Part Name:</th>
-                            <th>Product Link:</th>
                         </tr> 
                     </thead>
-                    <tbody>
+                    <tbody class="table-group-divider">
                         <tr>
                             <th>CPU:</th>
-                            <td>{cpu}</td>
-                            <td>
-                                <a href={cpuLink} target="_blank">{cpu}</a>
-                            </td>
+                            <td><a href={cpuLink} target="_blank">{cpu}</a></td>
                         </tr>
                         <tr>
                             <th>CPU Cooler:</th>
-                            <td>{cpuCooler}</td>
-                            <td>
-                                <a href={cpuCoolerLink} target="_blank">{cpuCooler}</a>
-                            </td>
+                            <td><a href={cpuCoolerLink} target="_blank">{cpuCooler}</a></td>
                         </tr>
                         <tr>
                             <th>Motherboard:</th>
-                            <td>{motherboard}</td>
-                            <td>
-                                <a href={motherboardLink} target="_blank">{motherboard}</a>
-                            </td>
+                            <td><a href={motherboardLink} target="_blank">{motherboard}</a></td>
                         </tr>
                         <tr>
                             <th>Memory/RAM:</th>
-                            <td>{memory}</td>
-                            <td>
-                                <a href={memoryLink} target="_blank">{memory}</a>
-                            </td>
+                            <td><a href={memoryLink} target="_blank">{memory}</a></td>
                         </tr>
                         <tr>
                             <th>Graphics Card:</th>
-                            <td>{graphicsCard}</td>
-                            <td>
-                                <a href={graphicsCardLink} target="_blank">{graphicsCard}</a>
-                            </td>
+                            <td><a href={graphicsCardLink} target="_blank">{graphicsCard}</a></td>
                         </tr>
                         <tr>
                             <th>Storage:</th>
-                            <td>{storage}</td>
-                            <td>
-                                <a href={storageLink} target="_blank">{storage}</a>
-                            </td>
+                            <td><a href={storageLink} target="_blank">{storage}</a></td>
                         </tr>
                         <tr>
                             <th>Power Supply:</th>
-                            <td>{powerSupply}</td>
-                            <td>
-                                <a href={powerSupplyLink} target="_blank">{powerSupply}</a>
-                            </td>
+                            <td><a href={powerSupplyLink} target="_blank">{powerSupply}</a></td>
                         </tr>
                         <tr>
                             <th>Accessories/Other:</th>
-                            <td>{accessories}</td>
-                            <td>
-                                <a href={accessoriesLink} target="_blank">{accessories}</a>
-                            </td>
+                            <td><a href={accessoriesLink} target="_blank">{accessories}</a></td>
                         </tr>
                     </tbody>
                 </table>

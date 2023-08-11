@@ -49,7 +49,6 @@ const AddComputerForm = (props) => {
             accessoriesLink
         }, {withCredentials: true})
             .then((res) => {
-                // console.log(res.data);
                 setAllPcs([...allPcs, res.data]);
                 navigate('/')
             })
@@ -64,8 +63,6 @@ const AddComputerForm = (props) => {
                     errorArr.push(errorResponse[key].message)
                 }
                 setErrors(errorArr);
-
-                // console.log(err.response.data);
             })
     }
 

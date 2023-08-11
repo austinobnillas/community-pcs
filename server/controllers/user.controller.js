@@ -51,18 +51,5 @@ module.exports = {
     logout: (req, res) => {
         res.clearCookie('userToken');
         res.sendStatus(200);
-    },
-    getAllUsers: (req, res) => {
-        User.find()
-            .then(allUsers => res.json({users: allUsers}))
-            .catch(err => res.json({msg: "Something went Wrong", error: err}))
-    },
-    getOneUser: (req, res) => {
-
-        username = jwt.verify(req.cookies.userToken, secret)
-        console.log(username.username);
-
-        User.findOne({userName: userName.userName})
-            .then(user => res.json(user))
     }
 }
