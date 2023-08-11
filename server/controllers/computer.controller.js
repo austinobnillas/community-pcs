@@ -39,7 +39,7 @@ module.exports = {
         //cannot access this function unless logged in and the author of the post
         username = jwt.verify(req.cookies.userToken, secret)
         const createdBy = await Computer.findById({_id: req.params.id})
-        
+
         if (username.username === createdBy.username){
             Computer.findByIdAndDelete({_id: req.params.id})
             .then(updatedComputer => res.json(updatedComputer))
