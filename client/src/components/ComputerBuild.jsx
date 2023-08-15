@@ -100,7 +100,7 @@ const ComputerBuild = (props) => {
                             <th>Part Name:</th>
                         </tr> 
                     </thead>
-                    <tbody class="table-group-divider">
+                    <tbody className="table-group-divider">
                         <tr>
                             <th>CPU:</th>
                             <td><a href={cpuLink} target="_blank">{cpu}</a></td>
