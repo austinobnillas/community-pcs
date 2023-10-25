@@ -1,14 +1,8 @@
-FINAL SOLO PROJECT FOR CODING DOJO
-Tech Stack: MongoDB ExpressJS React NodeJs
+# MyWatchList   
+### Final Coding Dojo Solo Project     
 
+## Overview   
+MyWatchList is an app for the average TV show or movie binger. With this app you can create watchlists and add shows within this watchhlist thus orgainizing your shows for you to keep track of what you are currently watching or planning to watch.   
 
-MVP (Minimum Viable Product) features: 
-    - Basic CRUD functions with validations - DONE
-    - CSS - DONE
-    - Functional React Front End - DONE
-Bonus feature(s): 
-    - Login and Registration with validations using MERN stack. - DONE
-    - Responsive App - DONE
-    - protected routes with use of JWT - DONE
-    - Bootstrap (where needed) - DONE
-    - file upload (image of build); - SCRAPPED
+## Built With:     
+Vite | Node.js | MongoDB | Express | React | Postman | Bootstrap 

@@ -25,7 +25,7 @@ module.exports = {
             res.status(400).json(err);
         }
     },
-
+    
     login: async (req, res) => {
         try{
             const user = await User.findOne({username: req.body.username});
