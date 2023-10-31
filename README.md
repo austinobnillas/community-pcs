@@ -15,7 +15,6 @@ Please excuse UI as this app was one of my first jabs at using the MERN stack he
 ![Example UI](/client//src/assets/registerValidations.jpeg)
 ![Example UI](/client//src/assets/AddingPCForm.jpeg)
 ![Example UI](/client//src/assets/addPCValidations.jpeg)
-![Example UI](/client//src/assets/)
 
 ## Built With:     
 Javascript | Vite | Node.js | MongoDB | Express | React | Postman | Bootstrap 
